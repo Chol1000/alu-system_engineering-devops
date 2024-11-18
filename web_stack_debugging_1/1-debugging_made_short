@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# adv task
 service nginx stop
 service apache2 start
-curl 0:80
+curl -s http://localhost > /dev/null
+service nginx status
 
