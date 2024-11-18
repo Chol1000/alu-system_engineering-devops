@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-service nginx stop
-service apache2 start
-curl -s http://localhost > /dev/null
-service nginx status
-
+#Sets nginx for listening to 80 port
+sed -i "s/8080/80/" /etc/nginx/sites-enabled/default
+sudo service nginx restart
+kill -9 "$(cat /var/run/nginx.pid)"
